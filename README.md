@@ -37,19 +37,70 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+FULL ADDAR
+
+![image](https://github.com/user-attachments/assets/fd6b01e2-ddc2-4551-8bd4-16d12db773cb)
+
+FULL SUBTRACTED
+
+![image](https://github.com/user-attachments/assets/92371b07-e324-428a-b51e-2b3117c1afaa)
 
 **Procedure**
 
-Write the detailed procedure here
+1)Open Quartus2
 
+2)open new file
+
+3)create veri log file and using tools view the logic diagram
+
+4)Then click on netlist viewer and press RTL viewer to view the OUTPUT in graph format
+
+Program:
+
+Developed by: Saikripa SK
+
+RegisterNumber: 212224040284
 **Program:**
 
 /* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
+```
+1.FULL ADDAR
+module ex4(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+assign sum = ((a^b)^cin);
+assign carry = ((a&b) | (cin & (a ^ b)));
+endmodule
+
+2.FULL SUBTRACTED
+module ex4(a,b,bin,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+assign difference = ((a^b)^bin);
+assign borrow = ((~a&b)|(bin&(~(a^b))));
+endmodule
+```
 
 **RTL Schematic**
 
+1.FULL ADDAR
+
+![image](https://github.com/user-attachments/assets/5725f712-22db-4405-8d85-6d6f16d3c925)
+
+2.FULL SUBTRACTED
+
+![image](https://github.com/user-attachments/assets/7ea97961-dde1-4888-a227-ebf51967df88)
+
+
 **Output Timing Waveform**
+1.FULL ADDAR
+
+![image](https://github.com/user-attachments/assets/0fbc7c96-d7c8-4bf6-b6c9-a0f3bb5c596d)
+
+2.FULL SUBTRACTER
+
+![image](https://github.com/user-attachments/assets/0e152796-db1b-458b-abca-1c241544705a)
 
 **Result:**
 
